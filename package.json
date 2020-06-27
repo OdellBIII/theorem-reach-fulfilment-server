@@ -1,0 +1,19 @@
+{
+  "name": "trfulfillment",
+  "version": "1.0.0",
+  "description": "Theorem Reach fulfillment server for SpareChange",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Odell Blackmon III",
+  "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
+  "keywords": [
+    "trfulfillment",
+    "heroku"
+  ]
+}
