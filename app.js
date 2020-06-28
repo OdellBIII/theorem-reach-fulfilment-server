@@ -3,7 +3,7 @@ var fs = require('fs'); // to get data from html file
 
 http.createServer(function (req, res) {
 	res.writeHead(200, { 'Content-Type': 'text/html' });
-
+	let data = [];
 	// req.url stores the path in the url
 	var url = req.url;
 	if (url === "/") {
@@ -38,7 +38,6 @@ http.createServer(function (req, res) {
 	}
 	else
 	{
-		let data = [];
 		req.on('data', chunk => {
 			data.push(chunk);
 		});
