@@ -38,11 +38,14 @@ http.createServer(function (req, res) {
 	}
 	else
 	{
-
+		let data = [];
 		req.on('data', chunk => {
-			console.log(chunk);
+			data.push(chunk);
 		});
 
+		req.on('end', () => {
+			console.log(JSON.parse(data));
+		})
 		res.writeHead(200, {'Content-Type' : 'text/html'});
 		res.end();
 	}
