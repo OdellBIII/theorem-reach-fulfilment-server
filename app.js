@@ -36,6 +36,13 @@ http.createServer(function (req, res) {
 			}
 		});
 	}
+	else
+	{
+		console.log(req.headers);
+
+		res.writeHead(200, {'Content-Type' : 'text/html'});
+		res.end();
+	}
 
 }).listen(process.env.PORT || 3000, function () {
 	console.log("SERVER STARTED PORT: 3000");
