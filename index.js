@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   console.log(req.query);
   var user = req.query;
   database.ref('users/' + user.user_id).set({
-    tokens : user.reward,
+    tokens : 25,
   }, function(error) {
     if (error) {
       console.log(error);
