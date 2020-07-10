@@ -18,6 +18,12 @@ app.post("/", (req, res) => {
   res.sendStatus(200);
 });
 
+app.get("/", (req, res) => {
+
+  console.log(req.body);
+  res.sendStatus(200);
+});
+
 var server = app.listen(app.get('port'), function() {
   console.log("Listening on port %d", server.address().port);
 });
