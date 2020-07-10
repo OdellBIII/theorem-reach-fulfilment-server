@@ -33,6 +33,8 @@ app.get("/", (req, res) => {
   console.log(req.query);
   var user = req.query;
   database.ref('users/' + user.user_id).once('tokens').then(function(snapshot){
+    console.log(snapshot);
+    {/*
     database.ref('users/' + user.user_id).update({tokens : snapshot.val().tokens + user.reward}, function(error) {
     if (error) {
       console.log(error);
@@ -40,6 +42,7 @@ app.get("/", (req, res) => {
       console.log(error);
       console.log("Successful write operation!")
     }
+    */}
   });
 });
 
