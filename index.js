@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
       console.log("Successful write operation!")
     }
   });
-}
+});
 
 
   res.sendStatus(200);
