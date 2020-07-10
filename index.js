@@ -42,8 +42,8 @@ app.get("/", (req, res) => {
       console.log(error);
       console.log("Successful write operation!")
     }
-    */}
   });
+  */}
 });
 
 
