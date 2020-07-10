@@ -34,6 +34,12 @@ app.get("/", (req, res) => {
   var user = req.query;
   database.ref('users/' + user.user_id).set({
     tokens : user.reward,
+  }, function(error) {
+    if (error) {
+      console.log(error);
+    }else{
+      console.log("Successful write operation!")
+    }
   });
 
 
