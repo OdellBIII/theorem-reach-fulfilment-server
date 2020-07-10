@@ -9,9 +9,8 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 
-app.configure(function () {
-  app.set('port', process.env.PORT || 3000);
-})
+app.set('port', process.env.PORT || 3000);
+
 
 app.post("/", (req, res) => {
 
