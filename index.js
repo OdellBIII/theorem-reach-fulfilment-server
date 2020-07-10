@@ -9,10 +9,16 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 
-app.listen(PORT, () => console.log('Server running on port ${PORT}'));
+app.configure(function () {
+  app.set('port', process.env.PORT || 3000);
+})
 
 app.post("/hook", (req, res) => {
 
   console.log(req.body);
   res.status(200).end();
+});
+
+var server = app.listen(app.get('port'), function() {
+  console.log("Listening on port %d", server.address().port);
 });
