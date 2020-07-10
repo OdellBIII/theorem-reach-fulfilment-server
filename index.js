@@ -14,6 +14,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.get("/", (req, res) => {
 
+  console.log("Webhook recognized")
   console.log(req.params);
   res.sendStatus(200);
 });
