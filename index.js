@@ -11,7 +11,7 @@ const firebaseConfig = {
 };
 const firebase = require('firebase/app');
 require('firebase/database')
-firebase.initializaeApp(config);
+firebase.initializaeApp(firebaseConfig);
 
 var database = firebase.database();
 const express = require('express');
