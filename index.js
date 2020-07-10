@@ -9,7 +9,8 @@ const firebaseConfig = {
   appId: "1:506295831986:web:47d707b07de7bd5689a8ab",
   measurementId: "G-LB8GHE413R"
 };
-const firebase = require('firebase');
+const firebase = require('firebase/app');
+require('firebase/database')
 firebase.initializaeApp(config);
 
 var database = firebase.database();
