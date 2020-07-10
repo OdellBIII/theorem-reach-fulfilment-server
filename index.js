@@ -12,15 +12,9 @@ app.use(bodyParser.json());
 app.set('port', process.env.PORT || 3000);
 
 
-app.post("/", (req, res) => {
-
-  console.log(req.body);
-  res.sendStatus(200);
-});
-
 app.get("/", (req, res) => {
 
-  console.log(req.body);
+  console.log(req.params);
   res.sendStatus(200);
 });
 
