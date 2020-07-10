@@ -32,15 +32,16 @@ app.get("/", (req, res) => {
   console.log("Webhook recognized");
   console.log(req.query);
   var user = req.query;
-  database.ref('users/' + user.user_id).set({
-    tokens : 25,
-  }, function(error) {
+  database.ref('users/' + user.user_id).once('tokens').then(function(snapshot){
+    database.ref('users/' + user.user_id).update({tokens : snapshot.val().tokens + user.reward}, function(error) {
     if (error) {
       console.log(error);
     }else{
+      console.log(error);
       console.log("Successful write operation!")
     }
   });
+}
 
 
   res.sendStatus(200);
