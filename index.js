@@ -33,23 +33,23 @@ app.get("/", (req, res) => {
   var user = req.query;
   database.ref('users/' + user.user_id).once('value').then(function(snapshot){
     if(snapshot){
-    console.log("Snapshot:");
-    console.log(snapshot.val());
+      console.log("Snapshot:");
+      console.log(snapshot.val());
 
-    var newTokenAmount = parseInt(user.reward) + parseInt(snapshot.val().tokens)
+      var newTokenAmount = parseInt(user.reward) + parseInt(snapshot.val().tokens)
 
-    database.ref('users/' + user.user_id).update({tokens : newTokenAmount}, function(error) {
-    if (error) {
-      console.log(error);
-    }else{
-      console.log("Successful write operation!")
-    }
-  });
-}else{
-  database.ref('users/' + user.user_id).set({
-    tokens : parseInt(user.reward)
-  });
-}
+      database.ref('users/' + user.user_id).update({tokens : newTokenAmount}, function(error) {
+      if (error) {
+        console.log(error);
+      }else{
+        console.log("Successful write operation!")
+      }
+    });
+  }else{
+    database.ref('users/' + user.user_id).set({
+      tokens : parseInt(user.reward)
+    });
+  }
 });
 
 
