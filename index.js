@@ -30,9 +30,9 @@ app.set('port', process.env.PORT || 3000);
 app.get("/", (req, res) => {
 
   console.log("Webhook recognized");
-  console.log(req.query);
   var user = req.query;
   database.ref('users/' + user.user_id).once('value').then(function(snapshot){
+    console.log("Snapshot:");
     console.log(snapshot);
     {/*
     database.ref('users/' + user.user_id).update({tokens : snapshot.val().tokens + user.reward}, function(error) {
