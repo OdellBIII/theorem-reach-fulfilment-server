@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   console.log("Webhook recognized");
   var user = req.query;
   database.ref('users/' + user.user_id).once('value').then(function(snapshot){
-    if(snapshot != null){
+    if(snapshot.val() != null){
       console.log("Snapshot:");
       console.log(snapshot.val());
 
