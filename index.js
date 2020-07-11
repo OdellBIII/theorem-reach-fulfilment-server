@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   var user = req.query;
   database.ref('users/' + user.user_id).once('value').then(function(snapshot){
     console.log("Snapshot:");
-    console.log(snapshot);
+    console.log(snapshot.val());
     {/*
     database.ref('users/' + user.user_id).update({tokens : snapshot.val().tokens + user.reward}, function(error) {
     if (error) {
