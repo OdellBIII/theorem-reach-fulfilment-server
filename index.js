@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
   database.ref('users/' + user.user_id).once('value').then(function(snapshot){
     console.log("Snapshot:");
     console.log(snapshot.val());
-    {/*
+
     database.ref('users/' + user.user_id).update({tokens : snapshot.val().tokens + user.reward}, function(error) {
     if (error) {
       console.log(error);
@@ -43,7 +43,6 @@ app.get("/", (req, res) => {
       console.log("Successful write operation!")
     }
   });
-  */}
 });
 
 
