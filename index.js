@@ -35,7 +35,8 @@ app.get("/", (req, res) => {
     console.log("Snapshot:");
     console.log(snapshot.val());
 
-    database.ref('users/' + user.user_id).update({tokens : parseInt(snapshot.val().tokens) + user.reward}, function(error) {
+    var newTokenAmount = parseInt(user.reward) + parseInt(snapshot.val().tokens)
+    database.ref('users/' + user.user_id).update({tokens : newTokenAmount}, function(error) {
     if (error) {
       console.log(error);
     }else{
